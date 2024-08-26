@@ -1,0 +1,10 @@
+productName: "eric-oss-hello-world-go-app"
+productNumber: "CXC 201 0000"
+images:
+  hello-world:
+    productName: "hello world sample app image"
+    productNumber: ""
+    registry: "armdocker.rnd.ericsson.se"
+    repoPath: "REPO_PATH"
+    name: "eric-oss-hello-world-go-app"
+    tag: "VERSION"

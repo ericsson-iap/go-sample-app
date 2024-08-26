@@ -1,0 +1,18 @@
+{{- if .Values.ingress.enabled }}
+Get the application URL by:
+
+  http{{ if $.Values.ingress.tls }}s{{ end }}://{{ .Values.ingress.host }}/hello
+
+{{- else if contains "ClusterIP" .Values.service.type }}
+Get the application URL by running these commands:
+
+  export POD_NAME=$(kubectl get pods --namespace {{ .Release.Namespace }} -l "app.kubernetes.io/name={{ include "eric-oss-hello-world-go-app.name" . }},app.kubernetes.io/instance={{ .Release.Name }}" -o jsonpath="{.items[0].metadata.name}")
+
+  kubectl port-forward $POD_NAME 8050:8050
+
+  http://127.0.0.1:8050/hello
+
+{{- end }}
+Or access it using below URL if deployed on IDUN:
+
+  https://<Idun-URL>/hello

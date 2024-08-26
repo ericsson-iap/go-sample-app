@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ include "eric-oss-hello-world-go-app.name" . }}-network-policy-api-gw
+  labels:
+    {{- include "eric-oss-hello-world-go-app.labels" . | indent 4 }}
+    {{- if .Values.labels }}
+      {{ .Values.labels | toYaml | indent 4 }}
+    {{- end }}
+  annotations:
+  {{- include "eric-oss-hello-world-go-app.product-info" . | indent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      app: eric-oss-hello-world-go-app
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: eric-eo-api-gateway
+    - podSelector:
+        matchLabels:
+          app: eric-sef-exposure-api-gateway
+    - podSelector:
+        matchLabels:
+          app: eric-pm-server
+    ports:
+    - port: {{ .Values.service.port }}
+

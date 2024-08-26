@@ -1,0 +1,10 @@
+#tosca_definitions_version: Metadata/Tosca.meta
+Description of an APP:
+    APPName: eric-oss-hello-world-go-app
+    APPVersion: VERSION
+    APPType: rApp
+APPComponent:
+    NameofComponent: eric-oss-hello-world-go-app
+    Version: VERSION
+    Path: OtherDefinitions/ASD/eric-oss-hello-world-go-appASD.yaml
+    ArtefactType: Microservice
