@@ -81,4 +81,4 @@ For specific unit test case command:
 go test -v --run [TESTCASE_NAME] .\src\
 ```
 
-Hello World APP SDK Documentation [Here](https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/content/sites/tor/idun-sdk/latest/index.html#getting-started).
+Hello World APP SDK Documentation [Here](https://developer.intelligentautomationplatform.ericsson.net/#tutorials/go-sample-app).
