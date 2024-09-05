@@ -1,4 +1,4 @@
-FROM armdocker.rnd.ericsson.se/dockerhub-ericsson-remote/rockylinux:8.6
+FROM <DOCKER-IMAGE>
 
 ARG USER_ID=60577
 ARG USER_NAME="eric-sdk"
