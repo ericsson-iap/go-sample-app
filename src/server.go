@@ -55,10 +55,8 @@ func handleAPICall(resp http.ResponseWriter, req *http.Request) {
 
 func checkServerHealth(resp http.ResponseWriter, req *http.Request) {
 	// add some health checks here if required
-	_, err := fmt.Fprintf(resp, "Ok")
-	if err != nil {
-		log.Error("Error writing to response")
-	}
+	fmt.Fprintf(resp, "Ok")
+
 }
 
 func getExitSignalsChannel() chan os.Signal {
