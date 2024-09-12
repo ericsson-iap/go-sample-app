@@ -2,7 +2,7 @@ name: Go Test and Lint
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "test-and-lint-action" ]
   pull_request:
     branches: [ "main" ]
 
