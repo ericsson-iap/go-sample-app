@@ -45,14 +45,20 @@ func handleAPICall(resp http.ResponseWriter, req *http.Request) {
 		log.Debug("Login Success.")
 	}
 
-	fmt.Fprintf(resp, "Hello World!!")
+	_, err = fmt.Fprintf(resp, "Hello World!!")
+	if err != nil {
+		log.Error("Error writing to response")
+	}
 
 	log.Debug("Leaving api handler...")
 }
 
 func checkServerHealth(resp http.ResponseWriter, req *http.Request) {
 	// add some health checks here if required
-	fmt.Fprintf(resp, "Ok")
+	_, err := fmt.Fprintf(resp, "Ok")
+	if err != nil {
+		log.Error("Error writing to response")
+	}
 }
 
 func getExitSignalsChannel() chan os.Signal {
