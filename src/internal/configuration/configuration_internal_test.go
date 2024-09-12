@@ -41,7 +41,7 @@ func TestGetConfig(t *testing.T) {
 	assert.Equal(t, 8050, testConfig.LocalPort,
 		"Port should be 8050, but got : "+strconv.Itoa(testConfig.LocalPort))
 
-	assert.Equal(t, "httpDeliberateFail", testConfig.LocalProtocol,
+	assert.Equal(t, "http", testConfig.LocalProtocol,
 		"Protocol should be http, but got : "+testConfig.LocalProtocol)
 
 	assert.Equal(t, "certificate.pem", testConfig.CertFile,
