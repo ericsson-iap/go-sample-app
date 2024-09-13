@@ -2,29 +2,29 @@ name: Go Test and Lint
 
 on:
   push:
-    branches: [ "main"]
+    branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Set up Go
-      uses: actions/setup-go@v4
-      with:
-        go-version: '1.20'
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20'
 
-    - name: Build
-      run: go build -v -mod=mod -o target/hello-world-app ./src
+      - name: Build
+        run: go build -v -mod=mod -o target/hello-world-app ./src
 
-    - name: Test
-      run: go test -mod=mod -v ./src/...
+      - name: Test
+        run: go test -mod=mod -v ./src/...
 
-    - name: Lint
-      uses: golangci/golangci-lint-action@v6
-      with:
-        version: v1.60.3
+      - name: Lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: v1.60.3
