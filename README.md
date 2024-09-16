@@ -4,7 +4,6 @@
 
 This is simple Hello World Golang application with following three endpoints.
 
-
 - **/hello** is a sample endpoint
 
 - **/health**  is an endpoint for an external agent to monitor the app's liveliness
