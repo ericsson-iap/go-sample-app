@@ -23,3 +23,40 @@ go.work.sum
 
 # env file
 .env
+
+### Eclipse template
+.project
+.classpath
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+
+### IntelliJ
+.idea
+*.iml
+
+### mac
+.DS_Store
+
+### Annotation Processing
+.apt_generated/
+.apt_generated_test/
+
+### Log file
+*.log
+
+### Build folders
+target/
+build/
+vendor/
+
+
+
