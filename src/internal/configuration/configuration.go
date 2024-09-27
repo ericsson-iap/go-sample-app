@@ -96,6 +96,7 @@ func NewTLSConfig() *tls.Config {
 		InsecureSkipVerify: false,
 		Certificates:       []tls.Certificate{},
 		RootCAs:            caCertPool,
+		MinVersion:         tls.VersionTLS13,
 	}
 
 	return tlsConfig
@@ -125,6 +126,7 @@ func LogmTLSConfig() *tls.Config {
 		InsecureSkipVerify: false,
 		Certificates:       []tls.Certificate{cert},
 		RootCAs:            caCertPool,
+		MinVersion:         tls.VersionTLS13,
 	}
 
 	return tlsConfig

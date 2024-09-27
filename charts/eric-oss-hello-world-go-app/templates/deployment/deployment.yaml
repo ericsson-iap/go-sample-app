@@ -36,10 +36,12 @@ spec:
         app.kubernetes.io/instance: {{ .Release.Name }}
         service.cleartext/scraping: "true"
       annotations:
+      {{- $container := include "eric-oss-hello-world-go-app.container-annotations" . | fromYaml }}
         prometheus.io/port: "{{ .Values.service.port }}"
         prometheus.io/scrape: "{{ .Values.prometheus.scrape }}"
 {{- include "eric-oss-hello-world-go-app.product-info" . | indent 8 }}
     spec:
+      automountServiceAccountToken: false
       {{- if (index .Values "podPriority" "eric-oss-hello-world-go-app" "priorityClassName") }}
       priorityClassName: {{ (index .Values "podPriority" "eric-oss-hello-world-go-app" "priorityClassName") }}
       {{- end }}
@@ -70,6 +72,7 @@ spec:
             capabilities:
               drop:
               - all
+            {{- include "eric-oss-hello-world-go-app.seccomp-profile" . | indent 12 }}
           volumeMounts:
             - name: config-volume
               mountPath: /etc/adp
