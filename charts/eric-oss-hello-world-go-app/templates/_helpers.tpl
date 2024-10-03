@@ -162,9 +162,13 @@ Retrieve AppArmor profile value as a string for container annotations in Kuberne
 */}}
 {{- define "eric-oss-hello-world-go-app.appArmorProfileAnnotation" }}
 {{- if .Values.appArmorProfile -}}
-  {{ .Values.appArmorProfile.type | quote }}
+  {{ if eq .Values.appArmorProfile.type "RuntimeDefault" -}}
+    "runtime/default"
+  {{ else -}}
+    {{ .Values.appArmorProfile.type | quote }}
+  {{- end }}
 {{- else -}}
-  "RuntimeDefault"
+  "runtime/default"
 {{- end }}
 {{- end }}
  
