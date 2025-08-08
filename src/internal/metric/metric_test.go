@@ -25,5 +25,5 @@ func TestRegisterMetrics(t *testing.T) {
 
 	metrics, err := metric.Registry.Gather()
 	assert.NoError(t, err)
-	assert.Len(t, metrics, 2)
+	assert.Len(t, metrics, 1)
 }
