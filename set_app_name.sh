@@ -65,9 +65,9 @@ echo -e "\nUsing ${BLUE}TARGET_DIR${DEFAULT} as: $TARGET_DIR"
 INPUT_PATHS=("charts/" "csar/" "src/" "go.mod")
 
 # Check for Dockerfile or Dockerfile-template
-if [ -f "Dockerfile" ]; then
+if [ -f "$TARGET_DIR/Dockerfile" ]; then
     INPUT_PATHS+=("Dockerfile")
-elif [ -f "Dockerfile-template" ]; then
+elif [ -f "$TARGET_DIR/Dockerfile-template" ]; then
     INPUT_PATHS+=("Dockerfile-template")
 fi
 
