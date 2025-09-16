@@ -18,6 +18,9 @@ jobs:
         with:
           go-version: '1.20'
 
+      - name: Test renaming script
+        uses: ./.github/actions/renaming-script-composite-action
+
       - name: Build
         run: go build -v -mod=mod -o target/hello-world-app ./src
 
@@ -34,3 +37,6 @@ jobs:
         with:
           files: .
           config_file: .markdownlint.yaml
+
+      - name: Reset app name
+        run: export TARGET_DIR="../go-sample-app" && export APP_NAME="eric-oss-hello-world-go-app" && ./set_app_name.sh
