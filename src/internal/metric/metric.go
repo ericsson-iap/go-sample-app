@@ -1,11 +1,11 @@
 package metric
 
 import (
-	"github.com/prometheus/client_golang/prometheus"
-)
+	"eric-oss-hello-world-go-app/src/internal/configuration"
 
-const (
-	servicePrefix = "hello_world"
+	"strings"
+
+	"github.com/prometheus/client_golang/prometheus"
 )
 
 var (
@@ -18,14 +18,14 @@ var (
 func createMetrics() {
 	RequestsTotal = prometheus.NewCounter(
 		prometheus.CounterOpts{
-			Namespace: servicePrefix,
+			Namespace: strings.Replace(configuration.AppConfig.ChosenName, "-", "_", -1),
 			Name:      "requests_total",
 			Help:      "Total number of API requests",
 		})
 }
 
 func registerMetrics() {
-	Registry.Register(RequestsTotal)               //nolint:errcheck // handling invalid metrics descriptors is outside the app scope
+	Registry.Register(RequestsTotal) //nolint:errcheck // handling invalid metrics descriptors is outside the app scope
 }
 
 // SetupMetrics sets up the metrics

@@ -27,6 +27,7 @@ type Config struct {
 	AppKey          string
 	AppCert         string
 	AppCertFilePath string
+	ChosenName      string
 }
 
 const localPort = 8050
@@ -56,6 +57,7 @@ func configFromEnvVars() *Config {
 		AppKey:          getOsEnvString("APP_KEY", ""),
 		AppCert:         getOsEnvString("APP_CERT", ""),
 		AppCertFilePath: getOsEnvString("APP_CERT_FILE_PATH", ""),
+		ChosenName:      "eric-oss-hello-world-go-app",
 	}
 }
 
