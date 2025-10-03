@@ -12,22 +12,22 @@ import (
 
 // Config is a struct that contains all fields currently read from OS environment variables
 type Config struct {
-	LocalPort       int
-	LocalProtocol   string
-	CertFile        string
-	KeyFile         string
-	ContainerName   string
-	IamClientID     string
-	IamClientSecret string
-	IamBaseURL      string
-	CaCertFileName  string
-	CaCertFilePath  string
-	LogControlFile  string
-	LogEndpoint     string
-	AppKey          string
-	AppCert         string
-	AppCertFilePath string
-	ChosenName      string
+	LocalPort        int
+	LocalProtocol    string
+	CertFile         string
+	KeyFile          string
+	ContainerName    string
+	IamClientID      string
+	IamClientSecret  string
+	IamBaseURL       string
+	CaCertFileName   string
+	CaCertFilePath   string
+	LogControlFile   string
+	LogEndpoint      string
+	AppKey           string
+	AppCert          string
+	AppCertFilePath  string
+	ChosenUniqueName string
 }
 
 const localPort = 8050
@@ -42,22 +42,22 @@ func ReloadAppConfig() {
 
 func configFromEnvVars() *Config {
 	return &Config{
-		LocalPort:       getOsEnvInt("LOCAL_PORT", localPort),
-		LocalProtocol:   getOsEnvString("LOCAL_PROTOCOL", "http"),
-		CertFile:        getOsEnvString("CERT_FILE", "certificate.pem"),
-		KeyFile:         getOsEnvString("KEY_FILE", "key.pem"),
-		ContainerName:   getOsEnvString("CONTAINER_NAME", ""),
-		IamClientID:     getOsEnvString("IAM_CLIENT_ID", ""),
-		IamClientSecret: getOsEnvString("IAM_CLIENT_SECRET", ""),
-		IamBaseURL:      getOsEnvString("IAM_BASE_URL", ""),
-		CaCertFileName:  getOsEnvString("CA_CERT_FILE_NAME", ""),
-		CaCertFilePath:  getOsEnvString("CA_CERT_FILE_PATH", ""),
-		LogControlFile:  getOsEnvString("LOG_CTRL_FILE", ""),
-		LogEndpoint:     getOsEnvString("LOG_ENDPOINT", ""),
-		AppKey:          getOsEnvString("APP_KEY", ""),
-		AppCert:         getOsEnvString("APP_CERT", ""),
-		AppCertFilePath: getOsEnvString("APP_CERT_FILE_PATH", ""),
-		ChosenName:      "eric-oss-hello-world-go-app",
+		LocalPort:        getOsEnvInt("LOCAL_PORT", localPort),
+		LocalProtocol:    getOsEnvString("LOCAL_PROTOCOL", "http"),
+		CertFile:         getOsEnvString("CERT_FILE", "certificate.pem"),
+		KeyFile:          getOsEnvString("KEY_FILE", "key.pem"),
+		ContainerName:    getOsEnvString("CONTAINER_NAME", ""),
+		IamClientID:      getOsEnvString("IAM_CLIENT_ID", ""),
+		IamClientSecret:  getOsEnvString("IAM_CLIENT_SECRET", ""),
+		IamBaseURL:       getOsEnvString("IAM_BASE_URL", ""),
+		CaCertFileName:   getOsEnvString("CA_CERT_FILE_NAME", ""),
+		CaCertFilePath:   getOsEnvString("CA_CERT_FILE_PATH", ""),
+		LogControlFile:   getOsEnvString("LOG_CTRL_FILE", ""),
+		LogEndpoint:      getOsEnvString("LOG_ENDPOINT", ""),
+		AppKey:           getOsEnvString("APP_KEY", ""),
+		AppCert:          getOsEnvString("APP_CERT", ""),
+		AppCertFilePath:  getOsEnvString("APP_CERT_FILE_PATH", ""),
+		ChosenUniqueName: "eric-oss-hello-world-go-app",
 	}
 }
 

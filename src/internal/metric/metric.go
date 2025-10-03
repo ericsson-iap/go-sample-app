@@ -18,7 +18,8 @@ var (
 func createMetrics() {
 	RequestsTotal = prometheus.NewCounter(
 		prometheus.CounterOpts{
-			Namespace: strings.Replace(configuration.AppConfig.ChosenName, "-", "_", -1),
+		    // Converts the ChosenUniqueName to a valid Prometheus namespace
+			Namespace: strings.Replace(configuration.AppConfig.ChosenUniqueName, "-", "_", -1),
 			Name:      "requests_total",
 			Help:      "Total number of API requests",
 		})
