@@ -148,7 +148,7 @@ func dispatch(msg string, level logrus.Level) {
 		return
 	}
 
-	entry := &logEntry{time.Now().Format(time.RFC3339), "0.0.1", msg, "rapp-eric-oss-hello-world-go-app", level.String()}
+	entry := &logEntry{time.Now().Format(time.RFC3339), "0.0.1", msg, "rapp-" + configuration.AppConfig.ChosenUniqueName, level.String()}
 	entryJSON, _ := json.Marshal(entry)
 	logger.wg.Wait()
 	logger.wg.Add(1)
