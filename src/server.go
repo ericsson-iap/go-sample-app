@@ -34,7 +34,7 @@ func hello(resp http.ResponseWriter, req *http.Request) {
 
 	metric.RequestsTotal.Inc()
 
-	err := request.HandleLogin(config.IamClientID, config.IamClientSecret, config.IamBaseURL)
+	err := request.HandleLogin(config.IamClientID, config.IamClientSecret, config.EicBaseURL)
 	if err != nil {
 		log.Error("login failed: " + err.Error())
 	}
