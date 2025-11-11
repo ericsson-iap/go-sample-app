@@ -19,7 +19,7 @@ type Config struct {
 	ContainerName    string
 	IamClientID      string
 	IamClientSecret  string
-	EicBaseURL       string
+	EicHostURL       string
 	CaCertFileName   string
 	CaCertFilePath   string
 	LogControlFile   string
@@ -49,7 +49,7 @@ func configFromEnvVars() *Config {
 		ContainerName:    getOsEnvString("CONTAINER_NAME", ""),
 		IamClientID:      getOsEnvString("IAM_CLIENT_ID", ""),
 		IamClientSecret:  getOsEnvString("IAM_CLIENT_SECRET", ""),
-		EicBaseURL:       getOsEnvString("EIC_BASE_URL", ""),
+		EicHostURL:       getOsEnvString("EIC_HOST_URL", ""),
 		CaCertFileName:   getOsEnvString("CA_CERT_FILE_NAME", ""),
 		CaCertFilePath:   getOsEnvString("CA_CERT_FILE_PATH", ""),
 		LogControlFile:   getOsEnvString("LOG_CTRL_FILE", ""),
