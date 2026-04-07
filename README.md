@@ -3,7 +3,7 @@
 ## Disclaimer
 
 > ⚠️ **Important Disclaimer:**
-> The Go Hello World App is **no longer supported.**
+> The Go Hello World Sample App is **no longer supported.**
 > The App shall recieve no further updates and
 > any potential issues in the future shall not be fixed.
 
