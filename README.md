@@ -3,7 +3,7 @@
 ## Disclaimer
 
 > ⚠️ **Important Disclaimer:**
-> The Go Hello World Sample App is **no longer supported.**
+> The Go Hello World Sample App is **obsolete.**
 > The App shall recieve no further updates.
 
 See the [Python Hello World Sample App](https://github.com/ericsson-iap/python-sample-app)
