@@ -3,12 +3,12 @@
 ## Disclaimer
 
 > ⚠️ **Important Disclaimer:**
-> The link below is accessible only to those who
-> **already have full access** to the EIAP Ecosystem.
-> If you do not have this access, **please do not proceed.**
+> The Go Hello World Sample App is **obsolete.**
+> The App shall recieve no further updates.
 
-Go Hello World Sample App Documentation [Here](https://developer.intelligentautomationplatform.ericsson.net/#tutorials/sample-app-in-go).
+See the [Python Hello World Sample App](https://github.com/ericsson-iap/python-sample-app)
+for a supported Sample App.
 
 **Note:**
-If you need help accessing the EIAP Ecosystem,
+If you would like to submit feedback on the Go Hello World App,
 contact support at this **email address:** intelligent.automation.platform@ericsson.com
